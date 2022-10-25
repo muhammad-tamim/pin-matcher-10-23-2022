@@ -10,3 +10,19 @@ document.getElementById('generate-btn').addEventListener('click', function getPi
         generateInput.value = generatePin;
     }
 })
+document.getElementById('click-number').addEventListener('click', function (event) {
+    // find click number 
+    const clickNumber = event.target.innerText;
+    const inputMetcher = document.getElementById('input-metcher');
+    // click C clear input meatcher 
+    if (isNaN(clickNumber)) {
+        if (clickNumber == 'C') {
+            inputMetcher.value = '';
+        }
+    }
+    // click number adding input-metcher
+    else {
+        const inputNumber = inputMetcher.value;
+        inputMetcher.value = inputNumber + clickNumber;
+    }
+});
