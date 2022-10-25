@@ -26,3 +26,17 @@ document.getElementById('click-number').addEventListener('click', function (even
         inputMetcher.value = inputNumber + clickNumber;
     }
 });
+document.getElementById('submit-btn').addEventListener('click', function () {
+    const generateInput = document.getElementById('generate-input');
+    const inputMetcher = document.getElementById('input-metcher');
+    // when submit btn click compare generateInput and InputMetcher and show reasult 
+    if (generateInput.value == inputMetcher.value) {
+        document.getElementById('pin-not-matched').style.display = 'none';
+        document.getElementById('pin-matched').style.display = 'block';
+    } else {
+        document.getElementById('pin-not-matched').style.display = 'block';
+        document.getElementById('pin-matched').style.display = 'none';
+    }
+    generateInput.value = '';
+    inputMetcher.value = '';
+})
